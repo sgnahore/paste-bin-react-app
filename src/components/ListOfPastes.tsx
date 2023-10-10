@@ -41,12 +41,20 @@ export function ListOfPastes({ allPastes }: ListOfPastesProps): JSX.Element {
             <ol> {renderEachPaste}</ol>
 
             {selectedPaste && (
-                <>
-                    {" "}
-                    <h2>{selectedPaste.title}</h2>
-                    <p>{selectedPaste.description}</p>{" "}
-                    <button onClick={() => handleCloseSummary()}> close</button>
-                </>
+                <div className="selected-paste">
+                    <h2 className="selected-paste-title">
+                        {selectedPaste.title}
+                    </h2>
+                    <p className="selected-paste-description">
+                        {selectedPaste.description}
+                    </p>
+                    <button
+                        className="close-button"
+                        onClick={() => handleCloseSummary()}
+                    >
+                        Close
+                    </button>
+                </div>
             )}
         </>
     );
